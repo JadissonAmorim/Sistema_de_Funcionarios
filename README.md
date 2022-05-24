@@ -9,8 +9,3 @@
 </div>
 <p>O destaque na segunda imagem é a barra de pesquisa. Que permite filtrar tanto por setor, como por nome. Ao filtrar por setor, o resumo dos gastos será calculado apenas para os funcionários daquele setor. A aplicação também conta com as ferramentas de CRUD básicas como ler, editar, deletar e criar.</p>
 
-<style>
-    p {
-        font-size: 18px;
-    }
-</style>

@@ -1,0 +1,63 @@
+﻿@model Sistema_de_Empregados.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div class="row">
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <br />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sector):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sector)
+        </dd>
+        <br />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <br />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FoodVoucher):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FoodVoucher)
+        </dd>
+        <br />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TransportationVoucher):
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TransportationVoucher)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index"><input type="button" value="Voltar" id="hehe"></a>
+</div>
+
+<style>
+    #hehe{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px 10px;
+    width: 130px;
+}
+
+    #hehe:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;}
+</style>

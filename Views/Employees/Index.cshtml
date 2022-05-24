@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Sistema_de_Empregados.Models.Employee>
+
+<html>
+<h1 id="bar">Funcionários</h1>
+
+<p>
+    <a asp-action="Create">
+        <input type="button" id="hehe" value="Cadastrar" />
+    </a>
+</p>
+<form asp-controller="Employees" asp-action="Index" method="get">
+    <p>
+        <input type="text" name="id" />
+        <input type="submit" value="Procurar" id="hehe"/>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector)
+            </td>
+            <td>
+                R$ @Html.DisplayFor(modelItem => item.Salary),00
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><input type="button" id="hehe" value="Editar"></a> |
+                 <a asp-action="Details" asp-route-id="@item.id"><input type="button" id="hehe" value="Acessar"></a> |
+                 <a asp-action="Delete" asp-route-id="@item.id"><input type="button" id="hehe" value="Excluir"></a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div id="calculos">
+        <p id="value">@ViewBag.Total</p>
+        <p>@ViewBag.TotalSalary</p>
+        <p>@ViewBag.TotalAliment</p>
+        <p>@ViewBag.TotalTransport</p>
+</div>
+<style>
+    #hehe{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px 10px;
+    width: 130px;
+}
+
+    #hehe:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;}
+
+    h1#bar {
+    width: 100%;
+    text-align: center;
+    }
+
+    #calculos {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 300px;
+    background-color: #D3D3D3;
+    }
+
+</style>
+</html>
+<script>
+    window.onload = initPage;
+    const text = document.getElementById("value").textContent
+    const textresult = document.getElementById("calculos")
+    function initPage(){
+        if (text == ""){
+            textresult.style.display = "none"
+        }
+    }
+</script>

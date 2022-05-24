@@ -1,0 +1,23 @@
+﻿@model Sistema_de_Empregados.Models.Employee
+
+<h3>Você tem certeza que quer deletar o funcionário @Html.DisplayFor(model => model.FullName)?</h3>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Sim" id="hehe"/> |
+        <a asp-action="Index"><input type="button" value="Não" id="hehe"/></a>
+    </form>
+</div>
+
+<style>
+    #hehe{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px 10px;
+    width: 130px;
+}
+
+    #hehe:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;}
+</style>
